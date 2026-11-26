@@ -21,7 +21,7 @@ jobs:
       - name: Test
         run: go test -cover ./...  
 
-    steps:
+    style:
       - name: Check out code
         uses: actions/checkout@v6
 
