@@ -5,9 +5,9 @@ import (
 	"embed"
 	"io"
 	"log"
-	"log/slog"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -96,6 +96,6 @@ func main() {
 		ReadHeaderTimeout: 5 * time.Second,
 	}
 
-	slog.Warn("Serving on port", "port", port)
+	log.Printf("Serving on port: %s", strconv.Quote(port))
 	log.Fatal(srv.ListenAndServe())
 }
